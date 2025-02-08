@@ -12,16 +12,72 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # iOS style icons.
+  # iOS-style icons
   cupertino_icons: ^1.0.8
 
+  # State management (BLoC)
+  flutter_bloc: ^8.1.6
+
+  # Value equality for objects
+  equatable: ^2.0.7
+
+  # Dependency injection
+  get_it: ^8.0.3
+
+  # Date formatting
+  intl: ^0.20.1
+
+  # API requests (Retrofit)
+  retrofit: ^4.4.2
+
+  # Cached network images
+  cached_network_image: ^3.4.1
+
+  # Shimmer loading effect
+  shimmer: ^3.0.0
+
+  # Internet connection checker
+  internet_connection_checker: ^1.0.0+1
+
+  # Functional programming utilities
+  dartz: ^0.10.1
+
+  # Immutable data classes
+  freezed_annotation: ^2.4.4
+
+  # JSON serialization
+  json_annotation: ^4.9.0
+
+  # SVG image support
+  flutter_svg: ^2.0.16
+
+  # Navigation & deep linking
+  auto_route: ^9.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # Linting rules
   flutter_lints: ^5.0.0
 
+  # AutoRoute code generator
+  auto_route_generator: ^9.0.0
+
+  # Retrofit API client generator
+  retrofit_generator: ^9.1.7
+
+  # API request logger
+  pretty_dio_logger: ^1.4.0
+
+  # Code generation tool
+  build_runner: ^2.4.14
+
+  # Freezed code generator
+  freezed: ^2.5.7
+
+  # JSON serialization generator
+  json_serializable: ^6.8.0
 
 
 flutter:
