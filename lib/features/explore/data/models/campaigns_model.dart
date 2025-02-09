@@ -1,6 +1,4 @@
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 
 import 'package:travela_assignment/features/explore/domain/entities/campaigns_entity.dart';
 
