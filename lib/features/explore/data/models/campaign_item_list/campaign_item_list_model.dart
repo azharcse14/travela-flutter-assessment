@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:travela_assignment/features/explore/domain/entities/campaign_item_list_entity.dart';
+
 part 'campaign_item_list_model.freezed.dart';
 part 'campaign_item_list_model.g.dart';
 
@@ -105,17 +106,17 @@ class CampaignItemListDataModel extends CampaignItemListDataEntity with _$Campai
     @JsonKey(name: "hotel")
     required dynamic hotel,
     @JsonKey(name: "created_at")
-    required DateTime createdAt,
+    DateTime? createdAt,
     @JsonKey(name: "location")
-    required Location location,
+    Location? location,
     @JsonKey(name: "property_type")
-    required PropertyType propertyType,
+    PropertyType? propertyType,
     @JsonKey(name: "rank")
-    required Rank rank,
+    Rank? rank,
     @JsonKey(name: "host")
-    required Host host,
+    Host? host,
     @JsonKey(name: "cancellation")
-    required Cancellation cancellation,
+    Cancellation? cancellation,
   }) = _CampaignItemListDataModel;
 
   factory CampaignItemListDataModel.fromJson(Map<String, dynamic> json) => _$CampaignItemListDataModelFromJson(json);
