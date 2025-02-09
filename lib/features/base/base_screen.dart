@@ -55,7 +55,7 @@ class BaseScreen extends StatelessWidget {
   /// Define the routes for AutoTabsRouter
   List<PageRouteInfo> _getRoutes() {
     return [
-      const ExploreRoute(),
+      ExploreRoute(),
       const BookingRoute(),
       const InboxRoute(),
       const ProfileRoute(),
