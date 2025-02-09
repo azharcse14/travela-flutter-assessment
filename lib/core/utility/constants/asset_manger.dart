@@ -16,9 +16,10 @@ class ImageAssets {
 
 
   static String noDataAvailableIcon =
-      '$IMAGE_PATH/svg/no_data_available_icon.svg';
+      '$IMAGE_PATH/no_data_available_icon.svg';
   static String noInternetConnectionIcon =
-      '$IMAGE_PATH/svg/no_internet_connection_icon.svg';
-  static String noDataFoundIcon = '$IMAGE_PATH/svg/no_data_found_icon.svg';
-  static String sessionTimeoutIcon = '$IMAGE_PATH/svg/session_timeout_icon.svg';
+      '$IMAGE_PATH/no_internet_connection_icon.svg';
+  static String noDataFoundIcon = '$IMAGE_PATH/no_data_found_icon.svg';
+  static String sessionTimeoutIcon = '$IMAGE_PATH/session_timeout_icon.svg';
+  static String searchIcon = '$IMAGE_PATH/search_icon.svg';
 }
