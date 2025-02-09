@@ -14,16 +14,22 @@ class CampaignsItemListBloc
   final CampaignsItemListUseCase useCase;
 
   CampaignItemListEntity? campaignsItemListEntity;
+  List<CampaignItemListDataEntity> _initialCampaignsItemListData = [];
   List<CampaignItemListDataEntity> _campaignsItemListData = [];
 
   List<CampaignItemListDataEntity> get getCampaignsItemListData =>
-      _campaignsItemListData;
+      _campaignsItemListData.isNotEmpty
+          ? _campaignsItemListData
+          : _initialCampaignsItemListData;
+
   int _page = 1;
   final int _perPage = 20;
+  bool hasMore = false;
 
   CampaignsItemListBloc({required this.useCase})
       : super(CampaignsItemListInitial()) {
     on<GetCampaignsItemList>((event, emit) async {
+      hasMore = false;
       _page = 1;
       _campaignsItemListData = [];
       emit(CampaignsItemListLoading());
@@ -43,6 +49,14 @@ class CampaignsItemListBloc
               ), (r) {
         campaignsItemListEntity = r;
         _campaignsItemListData.addAll(r.data);
+        _initialCampaignsItemListData = r.data;
+
+  /*      if (r.pagination.currentPage < r.pagination.lastPage) {
+          hasMore = true;
+        } else {
+          hasMore = false;
+        }
+*/
 
         emit(CampaignsItemListSuccess(campaignsItemListEntity: r));
       });
@@ -69,6 +83,11 @@ class CampaignsItemListBloc
                 ), (r) {
           campaignsItemListEntity = r;
           _campaignsItemListData.addAll(r.data);
+  /*        if (r.pagination.currentPage < r.pagination.lastPage) {
+            hasMore = true;
+          } else {
+            hasMore = false;
+          }*/
           emit(CampaignsItemListSuccess(campaignsItemListEntity: r));
         });
       }
