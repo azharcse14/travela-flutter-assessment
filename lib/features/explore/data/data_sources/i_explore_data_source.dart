@@ -1,5 +1,5 @@
-import 'package:travela_assignment/features/explore/data/models/campaign_item_list_model.dart';
-import 'package:travela_assignment/features/explore/data/models/campaigns_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaign_item_list/campaign_item_list_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaigns/campaigns_model.dart';
 
 abstract class IExploreDataSource {
 

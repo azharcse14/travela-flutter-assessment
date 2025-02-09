@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:travela_assignment/core/network/api_endpoints.dart';
-import 'package:travela_assignment/features/explore/data/models/campaign_item_list_model.dart';
-import 'package:travela_assignment/features/explore/data/models/campaigns_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaign_item_list/campaign_item_list_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaigns/campaigns_model.dart';
 
 part 'explore_api_service.g.dart';
 

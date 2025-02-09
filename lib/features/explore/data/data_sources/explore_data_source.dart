@@ -1,7 +1,7 @@
 import 'package:travela_assignment/features/explore/data/api_service/explore_api_service.dart';
 import 'package:travela_assignment/features/explore/data/data_sources/i_explore_data_source.dart';
-import 'package:travela_assignment/features/explore/data/models/campaign_item_list_model.dart';
-import 'package:travela_assignment/features/explore/data/models/campaigns_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaign_item_list/campaign_item_list_model.dart';
+import 'package:travela_assignment/features/explore/data/models/campaigns/campaigns_model.dart';
 
 class ExploreDataSource extends IExploreDataSource {
   final ExploreApiService apiService;
