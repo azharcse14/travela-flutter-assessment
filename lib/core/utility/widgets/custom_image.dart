@@ -42,7 +42,8 @@ class CustomImage extends StatelessWidget {
         placeholder: (context, url) => Transform.scale(
           scale: 1.0,
           child: DecoratedBox(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius),
               gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
@@ -63,7 +64,8 @@ class CustomImage extends StatelessWidget {
         errorWidget: (context, url, error) => Transform.scale(
           scale: 1.0,
           child: DecoratedBox(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(borderRadius),
               gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
