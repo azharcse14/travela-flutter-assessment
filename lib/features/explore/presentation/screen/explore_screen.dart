@@ -11,7 +11,7 @@ import 'package:travela_assignment/features/explore/presentation/manager/campaig
 import 'package:travela_assignment/features/explore/presentation/manager/campaigns_item_list/campaigns_item_list_bloc.dart';
 
 import '../widgets/campaign_skeleton.dart';
-import 'campaign_item_page.dart';
+import '../pages/campaign_item_page.dart';
 
 @RoutePage()
 class ExploreScreen extends StatelessWidget {

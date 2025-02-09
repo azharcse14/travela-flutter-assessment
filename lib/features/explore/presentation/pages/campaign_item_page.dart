@@ -71,7 +71,7 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
         padding: const EdgeInsets.only(top: 16),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFf2f2f2), ColorManager.colorWhite],
+            colors: [Color(0xFFf2f0f0), ColorManager.colorWhite],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
