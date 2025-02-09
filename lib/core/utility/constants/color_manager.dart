@@ -37,4 +37,8 @@ class ColorManager {
   static const Color kTextBlackColor = Color(0xFF1A1819);
   static const Color kTextGrayColor = Color(0xFF666870);
 
+  static const kHighlightShimmerColor = Color(0xFFF7F8FA);
+  static const kBaseShimmerColor = Color(0xFFEDF2FA);
+  static const kLightGreyColor = Color(0xFFF4ECFF);
+
 }
