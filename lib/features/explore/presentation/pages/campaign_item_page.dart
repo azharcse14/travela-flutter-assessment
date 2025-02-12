@@ -128,7 +128,6 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImage(
             imgUrl: data.images.first.url,
@@ -136,16 +135,29 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
             borderRadius: 24,
           ),
           AppSpacing.verticalSpacing16,
-          Text('Apartment in ${data.title}', style: getSemiBoldStyle(fontSize: 16)),
-          AppSpacing.verticalSpacing12,
-          Text('BDT ${data.price} /DAY', style: getSemiBoldStyle(fontSize: 18, color: ColorManager.kBaseColor)),
-          AppSpacing.verticalSpacing12,
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(Icons.star, size: 16, color: ColorManager.kTextBlackColor),
-              AppSpacing.horizontalSpacing4,
-              Text('${data.averageRating}', style: getSemiBoldStyle(fontSize: 16)),
-              Text(' (${data.averageRating})', style: getRegularStyle(color: ColorManager.kTextGrayColor)),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Apartment in ${data.title}', style: getSemiBoldStyle(fontSize: 16)),
+                    AppSpacing.verticalSpacing12,
+                    Text('BDT ${data.price} /DAY', style: getSemiBoldStyle(fontSize: 18, color: ColorManager.kBaseColor)),
+                  ],
+                ),
+              ),
+              AppSpacing.verticalSpacing12,
+              Row(
+                children: [
+                  const Icon(Icons.star, size: 16, color: ColorManager.kTextBlackColor),
+                  AppSpacing.horizontalSpacing4,
+                  Text('${data.averageRating}', style: getSemiBoldStyle(fontSize: 16)),
+                  Text(' (${data.averageRating})', style: getRegularStyle(color: ColorManager.kTextGrayColor)),
+                ],
+              ),
             ],
           ),
           AppSpacing.verticalSpacing16,
