@@ -11,6 +11,8 @@ class ImageAssets {
 
   static String placeHolderSvgImage = '$IMAGE_PATH/Placeholder_view.svg';
 
+  static String loginTopBannerImage = '$IMAGE_PATH/login_top_banner.svg';
+
   static String placeHolderNetworkImage =
       'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png';
 
