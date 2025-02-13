@@ -6,6 +6,7 @@ import 'package:travela_assignment/core/utility/constants/asset_manger.dart';
 import 'package:travela_assignment/core/utility/constants/color_manager.dart';
 import 'package:travela_assignment/core/utility/constants/style_manager.dart';
 import 'package:travela_assignment/core/utility/widgets/con_rich_txt.dart';
+import 'package:travela_assignment/features/auth/widgets/dial_code_picker/custom_phone_field.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  FocusNode focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +46,36 @@ class _LoginScreenState extends State<LoginScreen> {
               Text(
                 'Insert your phone number to continue',
                 style: getRegularStyle(color: ColorManager.kTextGrayColor),
+              ),
+              AppSpacing.verticalSpacing8,
+              CustomPhoneField(
+                focusNode: focusNode,
+                textAlignVertical: TextAlignVertical.top,
+                cursorColor: Colors.blue,
+                decoration: InputDecoration(
+                  counterText: '',
+                  labelText: 'Phone Number',
+                  // hintText: '182000000',
+                  border: InputBorder.none, // No visible border
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.transparent, width: 0), // No visible border when focused
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.transparent, width: 0), // No visible border when enabled
+                  ),
+                  contentPadding: EdgeInsets.only(top: 0),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  isDense: true,
+                ),
+                onChanged: (phone) {
+                  print(phone.completeNumber);
+                },
+                onCountryChanged: (country) {
+                  print('Country changed to: ' + country.name);
+                },
+                onTapOutside: (event) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
               ),
 
             ],
