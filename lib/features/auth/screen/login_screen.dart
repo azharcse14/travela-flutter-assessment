@@ -95,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               AppSpacing.verticalSpacing50,
               InkWell(
+                splashColor: Colors.white,
                 onTap: (){
                   if(_phoneNumber==null){
                     FeedBackHelper.showSnackBar(context: context, title: 'Please Enter Your Phone Number', type: FeedbackType.info,);
