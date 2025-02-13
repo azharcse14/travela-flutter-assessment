@@ -17,18 +17,28 @@ class FeedBackHelper {
       Overlay.of(context),
       (type == FeedbackType.info)
           ? CustomSnackBar.info(
-        message: title,
-        maxLines: maxLines,
-      )
+              message: title,
+              maxLines: maxLines,
+            )
           : (type == FeedbackType.success)
-          ? CustomSnackBar.success(
-        message: title,
-        maxLines: maxLines,
-      )
-          : CustomSnackBar.error(
-        message: title,
-        maxLines: maxLines,
-      ),
+              ? CustomSnackBar.success(
+                  message: title,
+                  maxLines: maxLines,
+                )
+              : (type == FeedbackType.alert)
+                  ? CustomSnackBar.alert(
+                      message: title,
+                      maxLines: maxLines,
+                    )
+                  : (type == FeedbackType.success)
+                      ? CustomSnackBar.success(
+                          message: title,
+                          maxLines: maxLines,
+                        )
+                      : CustomSnackBar.error(
+                          message: title,
+                          maxLines: maxLines,
+                        ),
     );
   }
 

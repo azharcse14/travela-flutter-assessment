@@ -36,6 +36,14 @@ class MyApp extends StatelessWidget {
         title: 'Travela',
         theme: ThemeData(
           fontFamily: 'Inter',
+          textTheme: TextTheme(
+            bodyLarge: TextStyle(fontFamily: 'Inter'),
+            bodyMedium: TextStyle(fontFamily: 'Inter'),
+            displayLarge: TextStyle(fontFamily: 'Inter'),
+            displayMedium: TextStyle(fontFamily: 'Inter'),
+            displaySmall: TextStyle(fontFamily: 'Inter'),
+            // Add more text styles as needed
+          ),
           primaryColor: ColorManager.colorWhite,
           dialogBackgroundColor: ColorManager.colorWhite,
           canvasColor: ColorManager.colorWhite,

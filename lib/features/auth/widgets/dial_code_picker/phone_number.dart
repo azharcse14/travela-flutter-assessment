@@ -52,6 +52,18 @@ class PhoneNumber {
     return true;
   }
 
+  String get numberLengthValidation{
+    Country country = getCountry(completeNumber);
+    if (number.length < country.minLength) {
+      return 'short.';
+    }
+
+    if (number.length > country.maxLength) {
+      return 'long.';
+    }
+    return 'match.';
+  }
+
   String get completeNumber {
     return countryCode + number;
   }
