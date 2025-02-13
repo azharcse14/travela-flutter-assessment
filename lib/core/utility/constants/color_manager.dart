@@ -40,5 +40,6 @@ class ColorManager {
   static const kHighlightShimmerColor = Color(0xFFF7F8FA);
   static const kBaseShimmerColor = Color(0xFFEDF2FA);
   static const kLightGreyColor = Color(0xFFF4ECFF);
+  static const kC3C6D3 = Color(0xFFC3C6D3);
 
 }

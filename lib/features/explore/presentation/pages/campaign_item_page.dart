@@ -71,7 +71,7 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
         padding: const EdgeInsets.only(top: 16),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFf2f0f0), ColorManager.colorWhite],
+            colors: [Color(0xFFf0f0f0), ColorManager.colorWhite],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -109,6 +109,7 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
       controller: _scrollController,
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
@@ -118,7 +119,60 @@ class _CampaignItemPageState extends State<CampaignItemPage> {
             separatorBuilder: (context, index) => AppSpacing.verticalSpacing16,
           ),
           if (campaignsItemListBloc.hasMore) _buildLoadMoreLoader(),
-          AppSpacing.verticalSpacing8,
+          AppSpacing.verticalSpacing20,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: ColorManager.colorWhite,
+                borderRadius: BorderRadius.circular(100),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.14),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                    offset: const Offset(4, 4),
+                  ),
+                ],
+              ),
+              child: SizedBox(
+                height: 70,
+                child: Center(
+                  child: Text('See More', style: getSemiBoldStyle(fontSize: 16),),
+                ),
+              ),
+            ),
+          ),
+          AppSpacing.verticalSpacing48,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text('Which location you want to book?', style: getSemiBoldStyle(fontSize: 20),),
+          ),
+          AppSpacing.verticalSpacing24,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: ColorManager.kBaseColor,
+                borderRadius: BorderRadius.circular(100),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.14),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                    offset: const Offset(4, 4),
+                  ),
+                ],
+              ),
+              child: SizedBox(
+                height: 66,
+                child: Center(
+                  child: Text('Search Location', style: getSemiBoldStyle(fontSize: 16, color: ColorManager.colorWhite),),
+                ),
+              ),
+            ),
+          ),
+          AppSpacing.verticalSpacing48,
         ],
       ),
     );

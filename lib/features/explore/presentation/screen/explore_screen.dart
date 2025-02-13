@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travela_assignment/core/di/di_import_path.dart';
+import 'package:travela_assignment/core/utility/constants/app_spacing.dart';
+import 'package:travela_assignment/core/utility/constants/asset_manger.dart';
 import 'package:travela_assignment/core/utility/constants/color_manager.dart';
 import 'package:travela_assignment/core/utility/constants/style_manager.dart';
 import 'package:travela_assignment/core/utility/widgets/custom_image.dart';
@@ -18,6 +21,7 @@ class ExploreScreen extends StatelessWidget {
   ExploreScreen({super.key});
 
   final campaignsItemListBloc = injector<CampaignsItemListBloc>();
+  final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -88,16 +92,26 @@ class ExploreScreen extends StatelessWidget {
             ),
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: TextField(
-            textAlign: TextAlign.center,
-            decoration: InputDecoration(
-              hintText: 'Search',
-              hintStyle: getSemiBoldStyle(),
-              prefixIcon: const Icon(Icons.search),
-              border: InputBorder.none,
-            ),
+        child: SizedBox(
+          height: 72,
+          child: Row(
+            children: [
+              AppSpacing.horizontalSpacing16,
+              SvgPicture.asset(ImageAssets.searchIcon),
+              Expanded(
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: getSemiBoldStyle(),
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

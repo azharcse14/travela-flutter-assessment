@@ -65,19 +65,32 @@ class BaseScreen extends StatelessWidget {
 
   /// Build the BottomNavigationBar
   Widget _buildBottomNavigationBar(TabsRouter tabsRouter) {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: ColorManager.kBaseColor,
-      unselectedItemColor: ColorManager.kNavColor,
-      selectedLabelStyle: getBoldStyle(fontSize: FontSize.s10),
-      unselectedLabelStyle: getMediumStyle(fontSize: FontSize.s10),
-      currentIndex: tabsRouter.activeIndex,
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      onTap: (value) {
-        tabsRouter.setActiveIndex(value);
-      },
-      items: _getBottomNavBarItems(),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFC3C6D3).withOpacity(0.7),
+            spreadRadius: 0,
+            blurRadius: 6,
+            offset: Offset(0, -2),
+          ),
+        ],
+      ),
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: ColorManager.kBaseColor,
+        unselectedItemColor: ColorManager.kNavColor,
+        selectedLabelStyle: getBoldStyle(fontSize: FontSize.s10),
+        unselectedLabelStyle: getMediumStyle(fontSize: FontSize.s10),
+        currentIndex: tabsRouter.activeIndex,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        elevation: 8.0,
+        onTap: (value) {
+          tabsRouter.setActiveIndex(value);
+        },
+        items: _getBottomNavBarItems(),
+      ),
     );
   }
 

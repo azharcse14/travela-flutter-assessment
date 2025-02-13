@@ -24,31 +24,31 @@ class NoDataAvailable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  ImageAssets.noDataAvailableIcon,
-                  height: AppSize.s100,
-                  width: AppSize.s100,
-                ),
-                AppSpacing.verticalSpacing24,
-                Text(
-                  title ?? 'No data available',
-                  style: getBoldStyle(
-                    fontSize: FontSize.s18,
-                  ),
-                ),
-                AppSpacing.verticalSpacing8,
-                Text(
-                  textAlign: TextAlign.center,
-                  description ?? 'There is no data to show you right now.',
-                  style: getRegularStyle(
-                    color: ColorManager.kTextGrayColor,
-                  ),
-                ),
-              ],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            ImageAssets.noDataAvailableIcon,
+            height: AppSize.s100,
+            width: AppSize.s100,
+          ),
+          AppSpacing.verticalSpacing24,
+          Text(
+            title ?? 'No data available',
+            style: getBoldStyle(
+              fontSize: FontSize.s18,
             ),
-          );
+          ),
+          AppSpacing.verticalSpacing8,
+          Text(
+            textAlign: TextAlign.center,
+            description ?? 'There is no data to show you right now.',
+            style: getRegularStyle(
+              color: ColorManager.kTextGrayColor,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

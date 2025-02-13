@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: ColorManager.colorWhite,
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
               AppSpacing.verticalSpacing50,
               InkWell(
                 onTap: (){
-                  print(_phoneNumber);
                   if(_phoneNumber==null){
                     FeedBackHelper.showSnackBar(context: context, title: 'Please Enter Your Phone Number', type: FeedbackType.info,);
                     return;
